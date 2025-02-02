@@ -1,4 +1,3 @@
-import daisyui from "daisyui"
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -6,7 +5,7 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   presets: [],
-  darkMode: 'media', // or 'class'
+  darkMode: 'class', // or 'class'
   theme: {
     accentColor: ({ theme }) => ({
       ...theme('colors'),
@@ -1064,7 +1063,7 @@ export default {
     },
   },
   plugins: [
-    daisyui
+    require('flowbite/plugin')
   ],
 }
 
