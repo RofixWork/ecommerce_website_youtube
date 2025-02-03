@@ -131,7 +131,7 @@ const Header = () => {
                 }
               >
                 Cart
-                <div class="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-indigo-800 bg-indigo-100 border-2 border-white rounded-full -top-3 -end-5 dark:border-gray-900">
+                <div className="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-indigo-800 bg-indigo-100 border-2 border-white rounded-full -top-3 -end-5 dark:border-gray-900">
                   20
                 </div>
                 {/* bg-indigo-100 text-indigo-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-indigo-900 dark:text-indigo-300 */}
