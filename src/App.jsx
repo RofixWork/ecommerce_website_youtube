@@ -7,6 +7,7 @@ const App = () => {
     <Routes>
       <Route element={<MainWrapper />}>
         <Route index element={<Home />} />
+        <Route path="/categories" element={<h2>My Categories</h2>} />
         <Route path="/*" element={<NotFound />} />
       </Route>
     </Routes>
