@@ -31,16 +31,16 @@ const useAxios = (url, method = 'GET', options = {}) => {
             setData(data)
         }
         catch(err) {
-            let error = null;
+            let error = null
 
             if(isAxiosError(err)) {
-                console.error('AXIOS ERROR', error.response.data.message)
+                console.error('AXIOS ERROR', err.response.data.message)
                 error = err.response.data.message
             } else {
                 console.error('API ERROR', err)
-                error = err.message|| 'An error occurred while fetching data.'
+                error = err.message
             }
-            setError(error)
+            setError(error || 'An error occurred while fetching data.')
         } finally {
             setIsLoading(false)
         }
