@@ -6,7 +6,7 @@ const MainWrapper = () => {
   return (
     <>
       <Header />
-      <main className="my-5 bg-red-500">
+      <main className="container">
         <Outlet />
       </main>
       <Footer />
