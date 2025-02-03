@@ -1,19 +1,19 @@
-import React from "react";
+import footerData from "../../static/FooterData.json";
 
 const Footer = () => {
   return (
     <footer className="bg-white rounded-lg shadow-sm m-4 dark:bg-gray-800">
       <div className="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
         <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
-          © 2025
+          © {new Date().getFullYear()}
           <a
-            href="https://google.com"
+            href={`${footerData.url}`}
             target="_blank"
             className="mx-1 hover:underline font-bold"
           >
-            EcommerceSite
+            {footerData.website}
           </a>
-          <span>. All Rights Reserved.</span>
+          <span>{footerData.copyright}</span>
         </span>
         {/* <ul className="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
           <li>
