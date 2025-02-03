@@ -49,6 +49,8 @@ const useAxios = (url, method = 'GET', options = {}) => {
     useEffect(() => {
         fetchData()
     }, [fetchData])
+
+    return {data, isLoading, error}
 }
 
 export default useAxios
