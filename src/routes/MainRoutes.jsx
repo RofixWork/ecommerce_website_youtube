@@ -1,5 +1,6 @@
 import Home from "../pages/Home";
 import NotFound from "../pages/NotFound";
+import Products from "../pages/Products";
 
 {
   /* <Route index element={<Home />} />
@@ -16,6 +17,11 @@ const mainRoutes = [
     id: 2,
     path: "/categories",
     component: <h2>My Categories</h2>,
+  },
+  {
+    id: 4,
+    path: "/products",
+    component: <Products />,
   },
   {
     id: 3,

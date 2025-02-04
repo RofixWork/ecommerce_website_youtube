@@ -1,7 +1,10 @@
 import React from "react";
 import { FaCartPlus, FaHeart } from "react-icons/fa";
 import { Rating } from "flowbite-react";
+import applyDiscount from "../utils/calculate_discount";
+import { Link } from "react-router";
 export const SingleProducts = ({
+  id,
   title,
   price,
   discountPercentage,
@@ -14,20 +17,20 @@ export const SingleProducts = ({
       <span className="bg-red-100 text-red-800 text-xs font-semibold w-[45px] h-[45px] flex items-center justify-center rounded-full dark:bg-red-200 dark:text-red-800 absolute -top-3 -right-2">
         {discountPercentage}%
       </span>
-      <a href="#">
+      <Link to={`/product/${id}/details/`}>
         <img
           className="rounded-t-lg"
           src={thumbnail}
           loading="lazy"
           alt={title}
         />
-      </a>
+      </Link>
       <div className="px-5 pb-5 pt-2">
-        <a href="#">
+        <Link to={`/product/${id}/details/`}>
           <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
             {title}
           </h5>
-        </a>
+        </Link>
         <div className="flex items-center mt-2.5 mb-5">
           <div className="flex items-center space-x-1 rtl:space-x-reverse">
             <Rating>
@@ -37,8 +40,6 @@ export const SingleProducts = ({
               ).map((item) => {
                 return <Rating.Star filled={true} key={item} />;
               })}
-
-              <Rating.Star filled={false} />
             </Rating>
           </div>
           <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded-sm dark:bg-blue-200 dark:text-blue-800 ms-3">
@@ -48,10 +49,10 @@ export const SingleProducts = ({
         <div className="flex items-center justify-between">
           <div className="flex items-end gap-1">
             <span className="text-lg font-bold text-gray-400 dark:text-white line-through">
-              $700
-            </span>
-            <span className="text-3xl font-bold text-gray-900 dark:text-white">
               ${price}
+            </span>
+            <span className="text-2xl font-bold text-gray-900 dark:text-white">
+              {applyDiscount(price, discountPercentage)}
             </span>
           </div>
           <div>
