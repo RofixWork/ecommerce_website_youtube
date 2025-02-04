@@ -19,7 +19,7 @@ export const SingleProducts = ({
       </span>
       <Link to={`/product/${id}/details/`}>
         <img
-          className="rounded-t-lg"
+          className="rounded-t-lg object-cover w-full"
           src={thumbnail}
           loading="lazy"
           alt={title}
