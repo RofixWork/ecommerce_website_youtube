@@ -3,6 +3,8 @@ import { FaCartPlus, FaHeart } from "react-icons/fa";
 import { Rating } from "flowbite-react";
 import applyDiscount from "../utils/calculate_discount";
 import { Link } from "react-router";
+import { motion } from "motion/react";
+
 export const SingleProducts = ({
   id,
   title,
@@ -12,7 +14,13 @@ export const SingleProducts = ({
   thumbnail,
 }) => {
   return (
-    <div className="relative w-full bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ type: "spring", stiffness: 200 }}
+      viewport={{ once: true }}
+      className="relative h-auto w-full bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700"
+    >
       {/* discount */}
       <span className="bg-red-100 text-red-800 text-xs font-semibold w-[45px] h-[45px] flex items-center justify-center rounded-full dark:bg-red-200 dark:text-red-800 absolute -top-3 -right-2">
         {discountPercentage}%
@@ -48,10 +56,10 @@ export const SingleProducts = ({
         </div>
         <div className="flex items-center justify-between">
           <div className="flex items-end gap-1">
-            <span className="text-lg font-bold text-gray-400 dark:text-white line-through">
+            <span className="text-sm font-bold text-gray-400 dark:text-white line-through">
               ${price}
             </span>
-            <span className="text-2xl font-bold text-gray-900 dark:text-white">
+            <span className="text-xl font-bold text-gray-900 dark:text-white">
               {applyDiscount(price, discountPercentage)}
             </span>
           </div>
@@ -65,6 +73,6 @@ export const SingleProducts = ({
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
